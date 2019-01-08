@@ -1,7 +1,9 @@
 const {
-  validateLanguageCode,
+  validateLocaleCode,
+  validateLocaleCodeAsync,
 } = require('./lib')
 
 module.exports = {
-  validateLanguageCode,
+  validateLocaleCode,
+  validateLocaleCodeAsync,
 }

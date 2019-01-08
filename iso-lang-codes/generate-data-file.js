@@ -30,7 +30,7 @@ const result = langs.filter((lang) => {
   return lang
 })
 
-fs.writeFile('./data.json', JSON.stringify(result, null, 2), 'utf8', function (err) {
+fs.writeFile('./src/data.json', JSON.stringify(result, null, 2), 'utf8', function (err) {
   if (err) throw err
   console.log('Data file created.')
 })
