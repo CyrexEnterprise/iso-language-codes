@@ -4,8 +4,12 @@
   "description": "Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types",
   "main": "index.js",
   "scripts": {
+    "test": "istanbul --reporter=text mocha --exit",
     "lint": "eslint src/ --ext .js"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cloudoki/iso-language-codes.git"
@@ -23,12 +27,15 @@
   },
   "homepage": "https://github.com/Cloudoki/iso-language-codes#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^5.12.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2"
   }
 }
