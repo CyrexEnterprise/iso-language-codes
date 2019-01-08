@@ -10,7 +10,11 @@ const validateLocaleCode = (localeCode) => {
   return _.findIndex(data, (l) => l.code === localeCode) !== -1
 }
 
+const findCountryLanguages = (countryCode) => {
+  return _.filter(data, (l) => l.countryCode === countryCode)
+}
 
 module.exports = {
   validateLocaleCode,
+  findCountryLanguages,
 }

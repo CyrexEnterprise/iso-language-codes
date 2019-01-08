@@ -1,8 +1,9 @@
 const { describe, it } = require('mocha')
-const { assert } = require('chai')
+const { assert, expect } = require('chai')
 
 const {
   validateLocaleCode,
+  findCountryLanguages,
 } = require('../src')
 
 describe('Validation tests.', () => {
@@ -22,3 +23,27 @@ describe('Validation tests.', () => {
     assert(validateLocaleCode(null) === false)
   })
 })
+
+describe('Code search tests.', () => {
+  it('should return a list of languages', (done) => {
+    const res = findCountryLanguages('US')
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(2)
+    done()
+  })
+
+  it('should return an empty list', (done) => {
+    const res = findCountryLanguages('XXX')
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(0)
+    done()
+  })
+
+  it('should return an empty list again', (done) => {
+    const res = findCountryLanguages(346592)
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(0)
+    done()
+  })
+})
+
