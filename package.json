@@ -4,7 +4,7 @@
   "description": "Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul --reporter=text mocha --exit",
+    "test": "nyc --reporter=text mocha --exit",
     "lint": "eslint src/ --ext .js"
   },
   "pre-commit": [
@@ -36,6 +36,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "pre-commit": "^1.2.2"
   }
 }
