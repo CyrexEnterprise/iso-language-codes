@@ -4,6 +4,7 @@ const { assert, expect } = require('chai')
 const {
   validateLocaleCode,
   findCountryLanguages,
+  findCountryLocales,
 } = require('../src')
 
 describe('Validation tests.', () => {
@@ -24,11 +25,12 @@ describe('Validation tests.', () => {
   })
 })
 
-describe('Code search tests.', () => {
+describe('Language code by country search tests.', () => {
   it('should return a list of languages', (done) => {
     const res = findCountryLanguages('US')
     expect(res).to.be.an('array')
     expect(res).to.have.lengthOf(2)
+    expect(res).to.deep.equal(['en', 'es'])
     done()
   })
 
@@ -47,3 +49,50 @@ describe('Code search tests.', () => {
   })
 })
 
+describe('Locale code by country search tests.', () => {
+  it('should return a list of locales', (done) => {
+    const res = findCountryLocales('BE')
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(4)
+    expect(res).to.deep.equal(['de-BE', 'en-BE', 'fr-BE', 'nl-BE'])
+    done()
+  })
+
+  it('should return an empty list', (done) => {
+    const res = findCountryLocales('YYY')
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(0)
+    done()
+  })
+
+  it('should return an empty list again', (done) => {
+    const res = findCountryLocales(77236)
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(0)
+    done()
+  })
+})
+
+describe('Locale code by country search tests.', () => {
+  it('should return a list of locales', (done) => {
+    const res = findCountryLocales('BE')
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(4)
+    expect(res).to.deep.equal(['de-BE', 'en-BE', 'fr-BE', 'nl-BE'])
+    done()
+  })
+
+  it('should return an empty list', (done) => {
+    const res = findCountryLocales('YYY')
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(0)
+    done()
+  })
+
+  it('should return an empty list again', (done) => {
+    const res = findCountryLocales(77236)
+    expect(res).to.be.an('array')
+    expect(res).to.have.lengthOf(0)
+    done()
+  })
+})
