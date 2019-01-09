@@ -2,7 +2,9 @@ const { describe, it } = require('mocha')
 const { assert, expect } = require('chai')
 
 const {
+  locales,
   validateLocaleCode,
+  validateLanguageCode,
   findCountryLanguages,
   findCountryLocales,
 } = require('../src')
@@ -22,6 +24,23 @@ describe('Validation tests.', () => {
 
   it('should not validate the locale code (null)', () => {
     assert(validateLocaleCode(null) === false)
+  })
+
+
+  it('should validate the language code', () => {
+    assert(validateLanguageCode('es') === true)
+  })
+
+  it('should not validate the locale code', () => {
+    assert(validateLanguageCode('aa') === false)
+  })
+
+  it('should not validate the locale code (undefined)', () => {
+    assert(validateLanguageCode() === false)
+  })
+
+  it('should not validate the locale code (null)', () => {
+    assert(validateLanguageCode(null) === false)
   })
 })
 
@@ -93,6 +112,15 @@ describe('Locale code by country search tests.', () => {
     const res = findCountryLocales(77236)
     expect(res).to.be.an('array')
     expect(res).to.have.lengthOf(0)
+    done()
+  })
+})
+
+describe('Locales map', () => {
+  it('should find the right name for a locale', (done) => {
+    const res = locales()
+    expect(res).to.be.an('object')
+    expect(res['pt-PT']).to.equal('Portuguese (Portugal)')
     done()
   })
 })
