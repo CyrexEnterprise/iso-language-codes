@@ -28,9 +28,7 @@ const findCountryLanguages = (countryCode) => {
   const countryEntries = _.filter(data, (l) => l.countryCode === countryCode)
   const langSet = new Set()
 
-  for (let i = 0; i < countryEntries.length; i++) {
-    langSet.add(countryEntries[i].langCode)
-  }
+  countryEntries.forEach((e, i) => langSet.add(countryEntries[i].langCode))
 
   return Array.from(langSet)
 }
@@ -44,9 +42,7 @@ const findCountryLocales = (countryCode) => {
   const countryEntries = _.filter(data, (l) => l.countryCode === countryCode)
   const localeSet = new Set()
 
-  for (let i = 0; i < countryEntries.length; i++) {
-    localeSet.add(countryEntries[i].code)
-  }
+  countryEntries.forEach((e, i) => localeSet.add(countryEntries[i].code))
 
   return Array.from(localeSet)
 }
