@@ -1,12 +1,13 @@
 {
-  "name": "iso-language-codes",
+  "name": "iso-lang-codes",
   "version": "0.0.0-development",
   "description": "Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types",
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=text mocha --exit",
     "lint": "eslint src/ --ext .js",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "npx git-cz"
   },
   "pre-commit": [
     "lint"
