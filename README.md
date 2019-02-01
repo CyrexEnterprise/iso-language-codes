@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/Cloudoki/iso-language-codes.svg?branch=master)](https://travis-ci.org/Cloudoki/iso-language-codes)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+
 # ISO Language Codes
 
 Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types
@@ -7,6 +11,20 @@ Created using the data from [https://datahub.io/core/language-codes](https://dat
 Use this util to get and validate the languages codes, countries and languages names.
 
 <br/>
+
+# Usage
+Install the latest version:
+
+`npm install --save-dev iso-lang-codes@latest`
+
+Require the module in your code & start using:
+
+`const codes = require('iso-lang-codes')`
+
+`codes.validateLocaleCode('pt-PT')`
+
+
+<br />
 
 # Documentation
 
