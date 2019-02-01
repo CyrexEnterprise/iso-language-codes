@@ -23,12 +23,17 @@
     "country codes"
   ],
   "author": "Cloudoki",
+  "contributors": [
+    "Diogo Simões <diogo@cloudoki.com>",
+    "Délio Amaral <delio@cloudoki.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Cloudoki/iso-language-codes/issues"
   },
   "homepage": "https://github.com/Cloudoki/iso-language-codes#readme",
   "devDependencies": {
+    "@semantic-release/git": "^7.0.8",
     "chai": "^4.2.0",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
@@ -52,5 +57,13 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "release": {
+    "plugins": [
+      ["@semantic-release/git", {
+        "assets": ["package.json"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]"
+      }]
+    ]
   }
 }
