@@ -1,0 +1,55 @@
+{
+  "name": "iso-language-codes",
+  "version": "0.0.0-development",
+  "description": "Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=text mocha --exit",
+    "lint": "eslint src/ --ext .js",
+    "semantic-release": "semantic-release"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cloudoki/iso-language-codes.git"
+  },
+  "keywords": [
+    "iso language code",
+    "lang",
+    "locale",
+    "country codes"
+  ],
+  "author": "Cloudoki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cloudoki/iso-language-codes/issues"
+  },
+  "homepage": "https://github.com/Cloudoki/iso-language-codes#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "pre-commit": "^1.2.2",
+    "semantic-release": "^15.13.3",
+    "semantic-release-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
