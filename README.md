@@ -15,7 +15,7 @@ Use this util to get and validate the languages codes, countries and languages n
 # Usage
 Install the latest version:
 
-`npm install --save-dev iso-lang-codes@latest`
+`npm i --save iso-lang-codes@latest`
 
 Require the module in your code & start using:
 
