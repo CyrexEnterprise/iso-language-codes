@@ -70,9 +70,9 @@ Returns **[Array][3]&lt;[string][1]>** Locales list
 
 ## locales
 
-Returns a list with a map of all existing locale codes and the respective country+language
+Returns a list with a map of all existing locale codes and the respective country+countryCode
 
-Returns **[Object][4]** Locales list in the form of a map: ['pt-PT'] => 'Portuguese (Portugal)'
+Returns **[Object][4]** Locales list in the form of a map: ['pt-PT'] => 'Portuguese (PT)'
 
 [1]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
