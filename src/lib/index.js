@@ -48,7 +48,7 @@ const findCountryLocales = (countryCode) => {
 
 /**
  * Returns a list with a map of all existing locale codes and the respective country+language
- * @return {Object} Locales list in the form of a map: ['pt-PT'] => 'Portuguese (Portugal)'
+ * @return {Object} Locales list in the form of a map: ['pt-PT'] => 'Portuguese (PT)'
  */
 const locales = () => {
   const map = {}
