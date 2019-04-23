@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const data = require('../data.json')
 
 /**
@@ -7,7 +6,7 @@ const data = require('../data.json')
  * @return {boolean}
  */
 const validateLocaleCode = (localeCode) => {
-  return _.findIndex(data, (l) => l.code === localeCode) !== -1
+  return data.findIndex((l) => l.code === localeCode) !== -1
 }
 
 /**
@@ -16,7 +15,7 @@ const validateLocaleCode = (localeCode) => {
  * @return {boolean}
  */
 const validateLanguageCode = (languageCode) => {
-  return _.findIndex(data, (l) => l.langCode === languageCode) !== -1
+  return data.findIndex((l) => l.langCode === languageCode) !== -1
 }
 
 /**
@@ -25,7 +24,7 @@ const validateLanguageCode = (languageCode) => {
  * @return {string[]} Languages list
  */
 const findCountryLanguages = (countryCode) => {
-  const countryEntries = _.filter(data, (l) => l.countryCode === countryCode)
+  const countryEntries = data.filter((l) => l.countryCode === countryCode)
   const langSet = new Set()
 
   countryEntries.forEach((e, i) => langSet.add(countryEntries[i].langCode))
@@ -39,7 +38,7 @@ const findCountryLanguages = (countryCode) => {
  * @return {string[]} Locales list
  */
 const findCountryLocales = (countryCode) => {
-  const countryEntries = _.filter(data, (l) => l.countryCode === countryCode)
+  const countryEntries = data.filter((l) => l.countryCode === countryCode)
   const localeSet = new Set()
 
   countryEntries.forEach((e, i) => localeSet.add(countryEntries[i].code))
