@@ -53,7 +53,7 @@ const findCountryLocales = (countryCode) => {
 const locales = () => {
   const map = {}
   for (const l of data) {
-    map[l.code] = `${l.language} (${l.country})`
+    map[l.code] = `${l.language} (${l.countryCode})`
   }
   return map
 }

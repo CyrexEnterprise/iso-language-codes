@@ -120,7 +120,7 @@ describe('Locales map', () => {
   it('should find the right name for a locale', (done) => {
     const res = locales()
     expect(res).to.be.an('object')
-    expect(res['pt-PT']).to.equal('Portuguese (Portugal)')
+    expect(res['pt-PT']).to.equal('Portuguese (PT)')
     done()
   })
 })
