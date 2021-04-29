@@ -9,6 +9,7 @@
     "semantic-release": "semantic-release",
     "commit": "npx git-cz"
   },
+  "types": "./src/index.d.ts",
   "pre-commit": [
     "lint"
   ],
