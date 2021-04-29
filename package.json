@@ -4,7 +4,7 @@
   "description": "Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types",
   "main": "./src/index.js",
   "scripts": {
-    "test": "nyc --reporter=text mocha --exit",
+    "test": "mocha",
     "lint": "eslint src/ --ext .js",
     "semantic-release": "semantic-release",
     "commit": "npx git-cz"
@@ -35,7 +35,6 @@
   "homepage": "https://github.com/Cloudoki/iso-language-codes#readme",
   "devDependencies": {
     "@semantic-release/git": "^7.0.18",
-    "@semantic-release/npm": "^5.3.5",
     "chai": "^4.3.4",
     "commitizen": "^3.1.2",
     "cz-conventional-changelog": "^2.1.0",
@@ -45,12 +44,9 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^4.1.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
-    "nyc": "^13.3.0",
+    "mocha": "^8.3.2",
     "pre-commit": "^1.2.2",
-    "semantic-release": "^15.14.0",
-    "semantic-release-cli": "^4.1.2"
+    "semantic-release": "^17.4.2"
   },
   "dependencies": {},
   "config": {
@@ -59,17 +55,25 @@
     }
   },
   "release": {
+    "branches": [
+      {
+        "name": "master"
+      }
+    ],
     "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
       [
         "@semantic-release/git",
         {
           "assets": [
             "package.json"
           ],
-          "message": "chore(release): ${nextRelease.version} [skip ci]"
+          "message": "chore(release): ${nextRelease.version} [ci skip]"
         }
       ],
-      "@semantic-release/npm"
+      "@semantic-release/github"
     ]
   }
 }
