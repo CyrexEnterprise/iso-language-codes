@@ -63,5 +63,5 @@ module.exports = {
   validateLocaleCode,
   validateLanguageCode,
   findCountryLanguages,
-  findCountryLocales,
+  findCountryLocales
 }

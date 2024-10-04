@@ -16,13 +16,13 @@ const langs = ietfLanguages.map((obj) => {
   const language = languageData && languageData.English ? languageData.English : null
   if (!countryName || !language) {
     return null
-  } 
+  }
   return {
     code: obj.lang,
     langCode: obj.langType,
     countryCode: obj.territory,
     country: countryName,
-    language,
+    language
   }
 })
 

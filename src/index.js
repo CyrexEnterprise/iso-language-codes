@@ -3,7 +3,7 @@ const {
   validateLocaleCode,
   validateLanguageCode,
   findCountryLanguages,
-  findCountryLocales,
+  findCountryLocales
 } = require('./lib')
 
 module.exports = {
@@ -11,5 +11,5 @@ module.exports = {
   validateLocaleCode,
   validateLanguageCode,
   findCountryLanguages,
-  findCountryLocales,
+  findCountryLocales
 }

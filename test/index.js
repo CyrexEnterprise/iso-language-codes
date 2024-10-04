@@ -6,7 +6,7 @@ const {
   validateLocaleCode,
   validateLanguageCode,
   findCountryLanguages,
-  findCountryLocales,
+  findCountryLocales
 } = require('../src')
 
 describe('Validation tests.', () => {
@@ -25,7 +25,6 @@ describe('Validation tests.', () => {
   it('should not validate the locale code (null)', () => {
     assert(validateLocaleCode(null) === false)
   })
-
 
   it('should validate the language code', () => {
     assert(validateLanguageCode('es') === true)
