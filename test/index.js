@@ -1,5 +1,5 @@
-const { describe, it } = require('mocha')
-const { assert, expect } = require('chai')
+const { describe, it } = require('node:test')
+const assert = require('assert')
 
 const {
   locales,
@@ -11,115 +11,84 @@ const {
 
 describe('Validation tests.', () => {
   it('should validate the locale code', () => {
-    assert(validateLocaleCode('pt-PT') === true)
+    assert.strictEqual(validateLocaleCode('pt-PT'), true)
   })
 
   it('should not validate the locale code', () => {
-    assert(validateLocaleCode('pt-XX') === false)
+    assert.strictEqual(validateLocaleCode('pt-XX'), false)
   })
 
   it('should not validate the locale code (undefined)', () => {
-    assert(validateLocaleCode() === false)
+    assert.strictEqual(validateLocaleCode(), false)
   })
 
   it('should not validate the locale code (null)', () => {
-    assert(validateLocaleCode(null) === false)
+    assert.strictEqual(validateLocaleCode(null), false)
   })
 
   it('should validate the language code', () => {
-    assert(validateLanguageCode('es') === true)
+    assert.strictEqual(validateLanguageCode('es'), true)
   })
 
-  it('should not validate the locale code', () => {
-    assert(validateLanguageCode('aa') === false)
+  it('should not validate the language code', () => {
+    assert.strictEqual(validateLanguageCode('aa'), false)
   })
 
-  it('should not validate the locale code (undefined)', () => {
-    assert(validateLanguageCode() === false)
+  it('should not validate the language code (undefined)', () => {
+    assert.strictEqual(validateLanguageCode(), false)
   })
 
-  it('should not validate the locale code (null)', () => {
-    assert(validateLanguageCode(null) === false)
+  it('should not validate the language code (null)', () => {
+    assert.strictEqual(validateLanguageCode(null), false)
   })
 })
 
 describe('Language code by country search tests.', () => {
-  it('should return a list of languages', (done) => {
+  it('should return a list of languages', () => {
     const res = findCountryLanguages('US')
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(2)
-    expect(res).to.deep.equal(['en', 'es'])
-    done()
+    assert(Array.isArray(res))
+    assert.strictEqual(res.length, 2)
+    assert.deepStrictEqual(res, ['en', 'es'])
   })
 
-  it('should return an empty list', (done) => {
+  it('should return an empty list', () => {
     const res = findCountryLanguages('XXX')
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(0)
-    done()
+    assert(Array.isArray(res))
+    assert.strictEqual(res.length, 0)
   })
 
-  it('should return an empty list again', (done) => {
+  it('should return an empty list again', () => {
     const res = findCountryLanguages(346592)
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(0)
-    done()
+    assert(Array.isArray(res))
+    assert.strictEqual(res.length, 0)
   })
 })
 
 describe('Locale code by country search tests.', () => {
-  it('should return a list of locales', (done) => {
+  it('should return a list of locales', () => {
     const res = findCountryLocales('BE')
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(4)
-    expect(res).to.deep.equal(['de-BE', 'en-BE', 'fr-BE', 'nl-BE'])
-    done()
+    assert(Array.isArray(res))
+    assert.strictEqual(res.length, 4)
+    assert.deepStrictEqual(res, ['de-BE', 'en-BE', 'fr-BE', 'nl-BE'])
   })
 
-  it('should return an empty list', (done) => {
+  it('should return an empty list', () => {
     const res = findCountryLocales('YYY')
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(0)
-    done()
+    assert(Array.isArray(res))
+    assert.strictEqual(res.length, 0)
   })
 
-  it('should return an empty list again', (done) => {
+  it('should return an empty list again', () => {
     const res = findCountryLocales(77236)
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(0)
-    done()
-  })
-})
-
-describe('Locale code by country search tests.', () => {
-  it('should return a list of locales', (done) => {
-    const res = findCountryLocales('BE')
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(4)
-    expect(res).to.deep.equal(['de-BE', 'en-BE', 'fr-BE', 'nl-BE'])
-    done()
-  })
-
-  it('should return an empty list', (done) => {
-    const res = findCountryLocales('YYY')
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(0)
-    done()
-  })
-
-  it('should return an empty list again', (done) => {
-    const res = findCountryLocales(77236)
-    expect(res).to.be.an('array')
-    expect(res).to.have.lengthOf(0)
-    done()
+    assert(Array.isArray(res))
+    assert.strictEqual(res.length, 0)
   })
 })
 
 describe('Locales map', () => {
-  it('should find the right name for a locale', (done) => {
+  it('should find the right name for a locale', () => {
     const res = locales()
-    expect(res).to.be.an('object')
-    expect(res['pt-PT']).to.equal('Portuguese (PT)')
-    done()
+    assert.strictEqual(typeof res, 'object')
+    assert.strictEqual(res['pt-PT'], 'Portuguese (PT)')
   })
 })
