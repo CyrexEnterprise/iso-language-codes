@@ -1,6 +1,6 @@
 {
   "name": "iso-lang-codes",
-  "version": "0.0.0-development",
+  "version": "2.1.1",
   "description": "Node util for ISO Language Codes (639-1 and 693-2) and IETF Language Types",
   "main": "./src/index.js",
   "scripts": {
