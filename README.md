@@ -1,4 +1,4 @@
-[![Cloudoki](https://circleci.com/gh/Cloudoki/iso-language-codes.svg?style=shield)](https://app.circleci.com/pipelines/github/Cloudoki/iso-language-codes)
+![Tests OK](https://github.com/CyrexEnterprise/iso-language-codes/actions/workflows/release.yaml/badge.svg)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 
