@@ -3,3 +3,4 @@ export const validateLanguageCode: (languageCode: string) => boolean;
 export const findCountryLanguages: (countryCode: string) => string[];
 export const findCountryLocales: (countryCode: string) => string[];
 export const locales: () => { [locale: string]: string };
+export const getCountryByLocale: (locale: string) => string | undefined;

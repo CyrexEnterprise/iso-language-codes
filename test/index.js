@@ -6,7 +6,8 @@ const {
   validateLocaleCode,
   validateLanguageCode,
   findCountryLanguages,
-  findCountryLocales
+  findCountryLocales,
+  getCountryByLocale
 } = require('../src')
 
 describe('Validation tests.', () => {
@@ -90,5 +91,17 @@ describe('Locales map', () => {
     const res = locales()
     assert.strictEqual(typeof res, 'object')
     assert.strictEqual(res['pt-PT'], 'Portuguese (PT)')
+  })
+})
+
+describe('Country by locale search', () => {
+  it('should return the country name', () => {
+    const res = getCountryByLocale('en-GB')
+    assert.strictEqual(res, 'United Kingdom')
+  })
+
+  it('should return undefined', () => {
+    const res = getCountryByLocale('xx-XX')
+    assert.strictEqual(res, undefined)
   })
 })
